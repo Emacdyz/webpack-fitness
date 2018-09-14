@@ -1,0 +1,9 @@
+# dependencies
+/node_modules
+
+#production
+/dist
+/docs
+
+#files 
+.DS_Store
