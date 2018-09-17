@@ -27,10 +27,41 @@ module.exports = {
       //   test: /\.html$/,
       //   use: [
       //     {
-      //       loader: "html-loader"
+      //       loader: "html-loader",
+      //       options: { minimize: true },
       //     }
-      //   ]
+      //   ],
       // },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'url-loader?limit=7000',
+          {
+            loader: 'img-loader',
+            options: {
+              plugins: [
+                // require('imagemin-gifsicle')({ // compress gif images
+                //   interlaced: false
+                // }),
+                require('imagemin-mozjpeg')({ //compress jpeg images
+                  progressive: true,
+                  arithmetic: false
+                }),
+                // require('imagemin-pngquant')({ // compress png images
+                //   floyd: 0.5,
+                //   speed: 2
+                // }),
+                // require('imagemin-svgo')({ // Compress SVG images
+                //   plugins: [
+                //     { removeTitle: true },
+                //     { convertPathData: false }
+                //   ]
+                // }) 
+              ]
+            }
+          }
+        ]
+      },
       {
         test: /\.scss$/,
         use: [
@@ -46,7 +77,7 @@ module.exports = {
       filename: './scss/base.scss',
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: "./public/index.html",
       filename: "./index.html"
     }),
     new WebpackDashboard(),

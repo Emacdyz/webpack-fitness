@@ -18,16 +18,20 @@ class FormContainer extends Component {
   render() {
     const { seo_title } = this.state
     return (
-      <form id="article-form">
-        <Input
-          text="SEO title"
-          label="seo_title"
-          type="text"
-          id="seo_title"
-          value={seo_title}
-          handleChange={this.handleChange}
-        />
-      </form>
+      <div>
+        <form id="article-form">
+          <Input
+            text="SEO title"
+            label="seo_title"
+            type="text"
+            id="seo_title"
+            value={seo_title}
+            handleChange={this.handleChange}
+          />
+        </form>
+        <img src='./public/llama4.jpeg' alt="small-img" />
+        <img src='./public/big-image.jpeg' alt="big-img" />
+      </div>
     )
   }
 }
