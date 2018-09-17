@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import FormContainer from "./js/components/container/FormContainer"
-// import './scss/base.scss'
-import "./style.css"
+import './scss/base.scss'
+// import "./style.css"
 
 class App extends Component {
 
