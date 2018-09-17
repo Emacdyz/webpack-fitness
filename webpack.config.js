@@ -33,13 +33,21 @@ module.exports = {
             use: ['css-loader']
           })
       }
+      // {
+      //   test: /\.scss$/,
+      //   use: [
+      //       "style-loader", // creates style nodes from JS strings
+      //       "css-loader", // translates CSS into CommonJS
+      //       "sass-loader" // compiles Sass to CSS, using Node Sass by default
+      //   ]
+      // }
     ]
   },
   plugins: [
+    new ExtractTextPlugin({filename: 'style.css'}),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
-    }),
-    new ExtractTextPlugin({filename: 'style.css'})
+    })
   ]
 }

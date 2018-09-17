@@ -27,14 +27,6 @@ class FormContainer extends Component {
           value={seo_title}
           handleChange={this.handleChange}
         />
-        <Input
-          text="SEO title"
-          label="seo_title"
-          type="text"
-          id="seo_title"
-          value={seo_title}
-          handleChange={this.handleChange}
-        />
       </form>
     )
   }

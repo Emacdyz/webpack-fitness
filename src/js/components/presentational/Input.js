@@ -1,6 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+const style = {
+  input: {
+    width: '300px',
+  }
+}
+
 const Input = ({ label, text, type, id, value, handleChange }) => (
   <div className="form-group">
     <label htmlFor={label}>{text}</label>
@@ -11,6 +17,7 @@ const Input = ({ label, text, type, id, value, handleChange }) => (
       value={value}
       onChange={handleChange}
       required
+      style={style.input}
     />
   </div>
 )
